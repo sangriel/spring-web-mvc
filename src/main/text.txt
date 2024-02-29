@@ -1,6 +1,0 @@
-// 1차시
-
-@ServletComponentScan
-선언된 하위 패키지 아래로 서블릿을 다 찾아서 서블릿으로 등록하는 걸 도와줌
-
-@WebServlet(name : 서블릿 이름, urlPatterns: URL매핑) -> 둘이 절대로 겹치면 안된다고 함
