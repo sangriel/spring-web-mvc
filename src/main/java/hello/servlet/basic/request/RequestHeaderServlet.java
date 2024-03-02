@@ -19,6 +19,7 @@ public class RequestHeaderServlet extends HttpServlet {
         printStartLine(request);
         printHeader(request);
         printHeaderUtils(request);
+        printEtc(request);
 
     }
 
@@ -73,7 +74,32 @@ public class RequestHeaderServlet extends HttpServlet {
             }
         }
         System.out.println();
+
+        System.out.println("[Content Util]");
+        System.out.println("request.getContentType() = " + request.getContentType());
+        System.out.println("request.getContentLength() = " + request.getContentLength());
+        System.out.println("request.getCharacterEncoding() = " + request.getCharacterEncoding());
+
+        System.out.println("--- Header Util end ---");
+        System.out.println();
     }
 
+
+    private void printEtc(HttpServletRequest request) {
+        System.out.println("--- ETC start ---");
+
+        System.out.println("[Remot Info]");
+        System.out.println("request.getRemoteHost() = " + request.getRemoteHost());
+        System.out.println("request.getRemoteAddr() = " + request.getRemoteAddr());
+        System.out.println("request.getRemotePort() = " + request.getRemotePort());
+
+        System.out.println("[Local Info]");
+        System.out.println("request.getLocalName() = " + request.getLocalName());
+        System.out.println("request.getLocalAddr() = " + request.getLocalAddr());
+        System.out.println("request.getLocalPort() = " + request.getLocalPort());
+
+        System.out.println("--- ETC end ---");
+        System.out.println();
+    }
 
 }
