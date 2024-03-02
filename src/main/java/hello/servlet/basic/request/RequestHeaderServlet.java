@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,6 +17,9 @@ public class RequestHeaderServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         printStartLine(request);
+        printHeader(request);
+        printHeaderUtils(request);
+
     }
 
     private static void printStartLine(HttpServletRequest request) {
@@ -45,6 +49,30 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println("--- Headers - end ---");
         System.out.println();
 
+    }
+
+    private void printHeaderUtils(HttpServletRequest request) {
+        System.out.println("--- Header Util start ---");
+        System.out.println("[Host Header Util]");
+        System.out.println("request.getServerName() = " + request.getServerName());
+        System.out.println("request.getServerPort() = " + request.getServerPort());
+        System.out.println();
+
+        System.out.println("[Accept-Language Util]");
+        request.getLocales().asIterator()
+                .forEachRemaining(locale -> {
+                    System.out.println("locale = " + locale);
+                });
+        System.out.println("request.getLocale() = " + request.getLocale());
+        System.out.println();
+
+        System.out.println("[cookie Util]");
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                System.out.println(cookie.getName() + "= " + cookie.getValue());
+            }
+        }
+        System.out.println();
     }
 
 
