@@ -1,0 +1,4 @@
+
+서버 입장에서는 Get이나 Post나 어차피 형식이 똑같은 query 형식으로 오기 때문에 그냥 똑같이 getParameter로 정보를 가져오면 됨.
+(x-www-url-encoded) 경우에만 인듯
+이건 진짜 몰랐네
