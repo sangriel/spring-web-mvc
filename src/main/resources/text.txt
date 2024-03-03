@@ -2,3 +2,10 @@
 서버 입장에서는 Get이나 Post나 어차피 형식이 똑같은 query 형식으로 오기 때문에 그냥 똑같이 getParameter로 정보를 가져오면 됨.
 (x-www-url-encoded) 경우에만 인듯
 이건 진짜 몰랐네
+
+
+jsp 만들때
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 이거 적어주고
+<% %> 안에 자바 코드 넣어주면 됨
+결국 <% %> 안에 코드가 servlet으로 변환되기 때문에 request,나  response같은것을 별도의 import 없이 쓸 수 있음
+<%= %> 이거는 자바코드 출력하는 syntax
