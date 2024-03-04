@@ -9,3 +9,15 @@ jsp 만들때
 <% %> 안에 자바 코드 넣어주면 됨
 결국 <% %> 안에 코드가 servlet으로 변환되기 때문에 request,나  response같은것을 별도의 import 없이 쓸 수 있음
 <%= %> 이거는 자바코드 출력하는 syntax
+
+RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewPath);
+requestDispatcher.forward(request,response)
+url이 변경되지 않고 서버안에서 내부적으로 view를 바꿔치기 해서 보여주는 개념이라고 알면 될듯?
+
+
+was 서버 룰에서WEB-INF안에 있는 경우에는 외부에서 호출해도 호출되지 않음 그냥 규약임
+그래서 항상 controller(servlet 같은 것)을 통해서만 호출할 수 있게 됨
+
+redirect vs forward
+redirect경우 실제로 url이 바뀜. 따라서 클라이언트 단에서 리다이렉션을 인지할 수 있음
+하지만 forward의 경우는 서버안에서만 일어나서 인지 불가능
