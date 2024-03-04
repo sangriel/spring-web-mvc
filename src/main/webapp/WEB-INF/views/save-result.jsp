@@ -1,4 +1,4 @@
-<%@ page import="hello.servlet.domain.member.Member" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: sangminhan
   Date: 2024/03/04
