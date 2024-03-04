@@ -23,3 +23,8 @@ redirect경우 실제로 url이 바뀜. 따라서 클라이언트 단에서 리�
 하지만 forward의 경우는 서버안에서만 일어나서 인지 불가능
 
 서버의 MVC에서 model은 그냥 request안에있는 내장 setAttribute, getAttribute를 사용해서 해결함.
+
+
+
+//FrontController 패턴
+spring Web MVC는 DispatcherServlet이 FrontController 패턴으로 구현되어 있음
