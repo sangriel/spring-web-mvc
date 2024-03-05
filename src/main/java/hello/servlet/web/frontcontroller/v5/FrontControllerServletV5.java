@@ -33,9 +33,10 @@ public class FrontControllerServletV5 extends HttpServlet {
     }
 
     private void initHandlerMappingMap() {
-        handlerMappingMap.put("/front-controller/v3/members/new-form", new MemberFormControllerV3());
-        handlerMappingMap.put("/front-controller/v3/members/save", new MemberSaveControllerV3());
-        handlerMappingMap.put("/front-controller/v3/members", new MemberListControllerV3());
+        //일부러 구분 지을려고 /v5/v3형식으로?
+        handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
+        handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
+        handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
     }
 
     private void initHandlerAdapter() {
