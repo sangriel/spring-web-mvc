@@ -27,6 +27,8 @@ public class MyView {
         });
         //개인적으로 굳이 request에다가 넣으거면 model계층을 왜 만들었나 싶기도한데,
         //복잡해지면 의미가 있어보이기도 하고
+        //jsp의 경우 setAttribute에 넣어야 꺼내 쓸수 있고
+        //다른템플릿 엔진은 다른 방식으로 넣어줘야 한다고 함
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewPath);
         requestDispatcher.forward(request,response);
     }
