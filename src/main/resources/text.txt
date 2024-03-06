@@ -57,3 +57,8 @@ RequestMappingHandlerMapping에서(@RequestMapping, @Controller 어노테이션�
 -> 요청 정보를 매빙
 ModelAndView
 -> 모델과 뷰를 반환
+
+
+//Spring MVC v2
+@RequestMapping이 클라스 단위에 붙어 있는게 아니기때문에
+@Controller를 하나로 통합
