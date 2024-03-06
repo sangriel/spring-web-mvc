@@ -28,3 +28,19 @@ redirect경우 실제로 url이 바뀜. 따라서 클라이언트 단에서 리�
 
 //FrontController 패턴
 spring Web MVC는 DispatcherServlet이 FrontController 패턴으로 구현되어 있음
+
+//Real Spring MVC
+DispatcherServlet -> FrameworkServlet -> HttpServletBean -> HttpServlet
+스프링부트는 dispatcherServlet을 서블릿으로 자동으로 등록하면서 모든 경로에 대해서 매핑함.
+
+요청 흐름
+서블릿 호출 -> Httpservlet (service) 호출 ->
+스프링 MVC는 DispatcherServlet 부모인 frameworkServlet에서 service()가 오버라이드 되어 있음
+FrameworkServlet.service()가 결국은 DispatcherServlet.doDispatch()/*제일 중요*/를 호출
+1. 핸들러 조회
+2. 핸들러 어댑터 조회
+3. 핸들러 어댑터 통해서 핸들러 실행
+4. ModelAndView 호출
+5. render(modelAndView, request,response) 함수 실행
+6. viewResolver를 통해서 뷰를 찾음
+7. View반환
