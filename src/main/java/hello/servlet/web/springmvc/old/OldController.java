@@ -3,6 +3,7 @@ package hello.servlet.web.springmvc.old;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -31,6 +32,21 @@ public class OldController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("OldController handle Request");
-        return null;
+        //application.properties에 prefix suffix 넣으면 잘 작동함
+        //springBoot가 올라올때
+        // InternalResourceViewResolver를 자동으로 등록을 함
+        // 이때 application.properties에 등록한 suffix, prefix 설정 정보를 사용
+        return new ModelAndView("new-form");
     }
+    /*
+    1. handlerAdapter 호출
+    -> new-form이라는 논리 이름 획득
+    2. ViewResolver 호출
+     -> new-form이라는 뷰 이름으로 viewResolver 순서대로 호출(1.BeanNameViewResolver, 2. InternalResourceViewResolver ...)
+    3. InternalResourceViewResolver 채택 -> InternalResourceView 반환
+    4. InternalResourceView는 JSP처럼 forward()를 호출해서 처리할 수 있는 경우에 사용
+    5. view.render() 실행
+      -> view.render()가 호출되고 InternalResourceView는 forward()를 사용해서 JSP를 실행
+
+     */
 }
