@@ -62,3 +62,6 @@ ModelAndView
 //Spring MVC v2
 @RequestMapping이 클라스 단위에 붙어 있는게 아니기때문에
 @Controller를 하나로 통합
+
+//Spring MVC v3
+@Controller 어노테이션 기반은 그냥 string을 반환하던 ModelAndView를 반환하던 상관이 없음
