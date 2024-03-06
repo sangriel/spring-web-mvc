@@ -44,3 +44,16 @@ FrameworkServlet.service()가 결국은 DispatcherServlet.doDispatch()/*제일 �
 5. render(modelAndView, request,response) 함수 실행
 6. viewResolver를 통해서 뷰를 찾음
 7. View반환
+
+
+
+//Spring mvc v1
+@Controller
+-> 스프링이 자동으로 스프링 빈으로 등록, 내부에 @Component가 있어서 가능함
+-> 스ㅍ링 MVC에서 어노테이션 기반 컨틀롤러 인식 -> RequestMappingHandlerMapping에서 해당 클래스를 인식 할 수 있게 한다는 뜻
+RequestMappingHandlerMapping에서(@RequestMapping, @Controller 어노테이션이 클래스 레벨에 붙어 있을 겨우 인식 가능)
+따라서 @Component,@RequestMapping해주면 RequestMappingHandlerMapping이 인식이 가능해짐
+@RequestMapping
+-> 요청 정보를 매빙
+ModelAndView
+-> 모델과 뷰를 반환
